@@ -17,11 +17,9 @@ const createCar = async () => {
     };
   });
 
-  const data = { cars: newData };
-
   fs.writeFileSync(
-    "D:\\Github\\CoderCars\\codercars-be\\db.json",
-    JSON.stringify(data)
+    "D:\\Github\\CoderCars\\codercars-be\\cars.json",
+    JSON.stringify(newData)
   );
   console.log("done");
 };
