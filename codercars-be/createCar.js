@@ -8,12 +8,13 @@ const createCar = async () => {
 
   newData = newData.map((e) => {
     return {
-      Name: e.Make,
-      Style: e.Model,
-      Size: e["Vehicle Size"],
-      Transmission: e["Transmission Type"],
-      Price: e.MSRP,
-      Year: e.Year,
+      make: e.Make,
+      model: e.Model,
+      size: e["Vehicle Size"],
+      transmission_type: e["Transmission Type"],
+      price: e.MSRP,
+      release_date: e.Year,
+      isDeleted: false,
     };
   });
 
