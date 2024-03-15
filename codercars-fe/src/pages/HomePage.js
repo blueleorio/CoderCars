@@ -33,6 +33,7 @@ const HomePage = () => {
   };
   const handleDelete = async () => {
     try {
+      console.log("Selected Car ID: ", selectedCar._id);
       await apiService.delete(`/cars/${selectedCar._id}`);
       getData();
     } catch (err) {
@@ -85,14 +86,12 @@ const HomePage = () => {
     release_date: car.release_date,
   }));
 
-  const getData =
-    useCallback(
-      async () => {
+  const getData = useCallback(async () => {
     const res = await apiService.get(`/cars?page=${page}`);
+    console.log("🚀 ~ getData ~ res:", res);
     setCars(res.data.cars);
     setTotalPages(res.data.total);
-      }
-      , [page]);
+  }, [page]);
 
   useEffect(() => {
     getData();

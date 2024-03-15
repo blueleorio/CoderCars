@@ -10,6 +10,7 @@ const createCar = async () => {
     return {
       make: e.Make,
       model: e.Model,
+      style: e["Vehicle Style"],
       size: e["Vehicle Size"],
       transmission_type: e["Transmission Type"],
       price: e.MSRP,
