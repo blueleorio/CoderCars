@@ -44,10 +44,13 @@ carController.getCars = async (req, res, next) => {
 
 carController.editCar = async (req, res, next) => {
   const targetId = req.params.id;
-  const updateInfo = "";
+  const updateInfo = req.body;
   const options = { new: true };
   try {
     const updated = await Car.findByIdAndUpdate(targetId, updateInfo, options);
+    if (!updated) {
+      return next(new Error("Car not found"));
+    }
     sendResponse(
       res,
       200,

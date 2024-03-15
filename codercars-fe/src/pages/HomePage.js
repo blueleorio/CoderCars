@@ -24,6 +24,7 @@ const HomePage = () => {
   const handleClickEdit = (id) => {
     setMode("edit");
     setSelectedCar(cars.find((car) => car._id === id));
+    console.log("Edit Car ID: ", id);
     setOpenForm(true);
   };
 
